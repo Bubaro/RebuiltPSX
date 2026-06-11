@@ -1,0 +1,239 @@
+Loading memory card /home/bubbo/.config/pcsx-redux/memcard1.mcd
+Loading memory card /home/bubbo/.config/pcsx-redux/memcard2.mcd
+Warning: OpenGL error reporting disabled. See About dialog for more information.
+PCSX-Redux booting
+Copyright (C) 2019-2025 PCSX-Redux authors
+CPU type: Dynarec (x86-64)
+Loaded BIOS: /home/bubbo/Downloads/SCPH-5501.BIN
+Known BIOS detected: SCPH-7003 (US) (8d8cb7e4)
+BIOS Trace1: 0x0f
+BIOS Trace1: 0x0e
+BIOS Trace1: 0x01
+BIOS Trace1: 0x02
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x01
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+BIOS Trace1: 0x02
+BIOS Trace1: 0x05
+PS-X Realtime Kernel Ver.2.5
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc. 
+BIOS Trace1: 0x06
+KERNEL SETUP!
+Configuration : EvCB	0x10		TCB	0x04
+BIOS Trace1: 0x07
+System ROM Version 3.0 11/18/96 A
+Copyright 1993-1996 (C) Sony Computer Entertainment Inc.
+ResetCallback: _96_remove ..
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+BIOS Trace1: 0x00
+BIOS Trace1: 0x01
+System Controller ROM Version 98/06/10 c3
+BIOS Trace1: 0x02
+PS-X Control PAD Driver  Ver 3.0
+Loaded BIOS: /home/bubbo/Downloads/SCPH-5501.BIN
+Known BIOS detected: SCPH-7003 (US) (8d8cb7e4)
+BIOS Trace1: 0x0f
+BIOS Trace1: 0x0e
+BIOS Trace1: 0x01
+BIOS Trace1: 0x02
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x01
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+BIOS Trace1: 0x02
+BIOS Trace1: 0x05
+PS-X Realtime Kernel Ver.2.5
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc. 
+BIOS Trace1: 0x06
+KERNEL SETUP!
+Configuration : EvCB	0x10		TCB	0x04
+BIOS Trace1: 0x07
+System ROM Version 3.0 11/18/96 A
+Copyright 1993-1996 (C) Sony Computer Entertainment Inc.
+ResetCallback: _96_remove ..
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+BIOS Trace1: 0x00
+BIOS Trace1: 0x01
+System Controller ROM Version 98/06/10 c3
+BIOS Trace1: 0x02
+PS-X Control PAD Driver  Ver 3.0
+Loaded CD Image: /home/bubbo/Downloads/Vib-Ribbon/Vib-Ribbon (Europe) (En,Fr,De,Es,It).cue[+cue].
+Track 01 (DATA) - Start 00:02:00, Length 01:28:67
+Track 02 (CDDA) - Start 01:42:00, Length 02:48:05
+Track 03 (CDDA) - Start 04:21:00, Length 02:33:47
+Track 04 (CDDA) - Start 06:55:00, Length 02:32:31
+Track 05 (CDDA) - Start 09:27:00, Length 02:34:57
+Track 06 (CDDA) - Start 12:02:00, Length 02:46:27
+Track 07 (CDDA) - Start 14:49:00, Length 02:33:05
+Track 08 (CDDA) - Start 17:22:00, Length 03:03:52
+CD-ROM Label: 
+CD-ROM ID: SCES02873
+CD-ROM EXE Name: SCES_028.73;1
+BIOS Trace1: 0x00
+SetGraphDebug:level:1,type:0 reverse:0
+VSync: timeout (1076:1075)
+TYPE : 6 free button or flying-V form
+PS-X Control PAD Driver  Ver 3.0
+BIOS Trace1: 0x08
+BOOTSTRAP LOADER Type C Ver 2.1   03-JUL-1994
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc.
+BIOS Trace1: 0x09
+setup file    : cdrom:SYSTEM.CNF;1
+TCB	00000004
+EVENT	00000010
+STACK	801ffff0
+BOOT =	cdrom:\SCES_028.73;1
+argument =	
+KERNEL SETUP!
+Configuration : EvCB	0x10		TCB	0x04
+boot file     : cdrom:\SCES_028.73;1
+EXEC:PC0(80011f2c)  T_ADDR(80010000)  T_SIZE(00006800)
+boot address  : 80011f2c 801ffff0
+Execute !
+                S_ADDR(801ffff0)  S_SIZE()
+Loader main()
+CD_init:addr=80016794
+Title main()
+MemorySys::Info()
+        ramsize: 2097152
+        ----------------
+         kernel:   65536
+          stack:   16384
+           code:  140228
+           data:   88899
+           heap: 1749232
+ResetGraph:jtb=800419a0,env=800419e8
+Got an unknown GPU data word: 000419a0 (cmdType: 0, command: 0)
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+CD_init:addr=80042e70
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+HEAP used: 884552,  free: 864672
+DumpHeap: 844K  
+Loaded BIOS: /home/bubbo/Downloads/SCPH-5501.BIN
+Known BIOS detected: SCPH-7003 (US) (8d8cb7e4)
+BIOS Trace1: 0x0f
+BIOS Trace1: 0x0e
+BIOS Trace1: 0x01
+BIOS Trace1: 0x02
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x01
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+BIOS Trace1: 0x02
+BIOS Trace1: 0x05
+PS-X Realtime Kernel Ver.2.5
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc. 
+BIOS Trace1: 0x06
+KERNEL SETUP!
+Configuration : EvCB	0x10		TCB	0x04
+BIOS Trace1: 0x07
+System ROM Version 3.0 11/18/96 A
+Copyright 1993-1996 (C) Sony Computer Entertainment Inc.
+ResetCallback: _96_remove ..
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+BIOS Trace1: 0x00
+BIOS Trace1: 0x01
+System Controller ROM Version 98/06/10 c3
+BIOS Trace1: 0x02
+BIOS Trace1: 0x00
+SetGraphDebug:level:1,type:0 reverse:0
+BIOS Trace1: 0x05
+BIOS Trace1: 0x08
+BOOTSTRAP LOADER Type C Ver 2.1   03-JUL-1994
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc.
+BIOS Trace1: 0x09
+setup file    : cdrom:SYSTEM.CNF;1
+TCB	00000004
+EVENT	00000010
+STACK	801ffff0
+BOOT =	cdrom:\SCES_028.73;1
+argument =	
+KERNEL SETUP!
+Configuration : EvCB	0x10		TCB	0x04
+boot file     : cdrom:\SCES_028.73;1
+EXEC:PC0(80011f2c)  T_ADDR(80010000)  T_SIZE(00006800)
+boot address  : 80011f2c 801ffff0
+Execute !
+                S_ADDR(801ffff0)  S_SIZE()
+Loader main()
+CD_init:addr=80016794
+Title main()
+MemorySys::Info()
+        ramsize: 2097152
+        ----------------
+         kernel:   65536
+          stack:   16384
+           code:  140228
+           data:   88899
+           heap: 1749232
+ResetGraph:jtb=800419a0,env=800419e8
+Got an unknown GPU data word: 000419a0 (cmdType: 0, command: 0)
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+CD_init:addr=80042e70
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+HEAP used: 884552,  free: 864672
+DumpHeap: 844K  
+Packet report: max 12512 of 24576
+CD_init:addr=80016794
+Game main()
+MemorySys::Info()
+        ramsize: 2097152
+        ----------------
+         kernel:   65536
+          stack:   16384
+           code:  303040
+           data:  117095
+           heap: 1558224
+ResetGraph:jtb=8006f28c,env=8006f2d4
+Got an unknown GPU data word: 0006f28c (cmdType: 0, command: 0)
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+CD_init:addr=80070e8c
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Assertion failed: file "C:/psj/dev/locale/game/FbStream.cpp", line 121
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+Unknown command for pad: 43

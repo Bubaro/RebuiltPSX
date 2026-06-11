@@ -1,0 +1,601 @@
+RebuiltPSX Observation Report #0001
+==================================
+
+Title:
+PCSX-Redux Boot and Vib-Ribbon Startup Observation
+
+Date:
+2026-06-10
+
+Author:
+Bubaro
+
+Environment:
+- Emulator: PCSX-Redux
+- Host OS: Linux
+- BIOS File Loaded: SCPH-5501.BIN
+- Disc Image: Vib-Ribbon (Europe)
+- Disc ID: SCES02873
+
+Purpose:
+Record observed PS1 startup behavior and application startup behavior for future RebuiltPSX documentation.
+
+==================================================
+OBSERVED SYSTEM FLOW
+==================================================
+
+POWER_ON
+→ BIOS LOAD
+→ BIOS TRACE ACTIVITY
+→ KERNEL SETUP
+→ SYSTEM ROM INIT
+→ PAD DRIVER INIT
+→ DISC DETECTED
+→ BOOTSTRAP LOADER
+→ SYSTEM.CNF LOAD
+→ EXEC TRANSFER
+→ LOADER MAIN
+→ TITLE MAIN
+→ GAME MAIN
+→ RUNTIME
+→ ASSERTION FAILURE
+
+==================================================
+DOCUMENTED COMMANDS / EVENTS
+==================================================
+
+Name:
+KERNEL_SETUP
+
+Observed:
+
+KERNEL SETUP!
+Configuration : EvCB 0x10 TCB 0x04
+
+Purpose:
+Initialize core kernel services.
+
+Observed Effects:
+- Event Control Blocks configured
+- Thread Control Blocks configured
+
+Subsystem:
+Kernel
+
+--------------------------------------------------
+
+Name:
+SYSTEM_ROM_INIT
+
+Observed:
+
+System ROM Version 3.0
+
+Purpose:
+Initialize ROM-level services.
+
+Subsystem:
+System
+
+--------------------------------------------------
+
+Name:
+PAD_DRIVER_INIT
+
+Observed:
+
+PS-X Control PAD Driver Ver 3.0
+
+Purpose:
+Initialize controller subsystem.
+
+Subsystem:
+Input
+
+--------------------------------------------------
+
+Name:
+BOOTSTRAP_LOADER
+
+Observed:
+
+BOOTSTRAP LOADER Type C Ver 2.1
+
+Purpose:
+Load and prepare executable from disc.
+
+Subsystem:
+Boot
+
+--------------------------------------------------
+
+Name:
+SYSTEM_CNF_LOAD
+
+Observed:
+
+setup file : cdrom:SYSTEM.CNF;1
+
+Purpose:
+Load disc boot configuration.
+
+Subsystem:
+CD-ROM / Boot
+
+--------------------------------------------------
+
+Name:
+BOOT_TARGET_RESOLVE
+
+Observed:
+
+BOOT = cdrom:\SCES_028.73;1
+
+Purpose:
+Determine executable to launch.
+
+Subsystem:
+Boot
+
+--------------------------------------------------
+
+Name:
+EXEC
+
+Observed:
+
+EXEC:PC0(80011f2c)
+T_ADDR(80010000)
+T_SIZE(00006800)
+
+Purpose:
+Transfer execution to loaded program.
+
+Subsystem:
+Boot
+
+Observed Effects:
+- Executable loaded into RAM
+- Program entry point selected
+- Control transferred
+
+--------------------------------------------------
+
+Name:
+LOADER_MAIN
+
+Observed:
+
+Loader main()
+
+Purpose:
+Application loader startup.
+
+Subsystem:
+Application
+
+--------------------------------------------------
+
+Name:
+TITLE_MAIN
+
+Observed:
+
+Title main()
+
+Purpose:
+Title screen initialization.
+
+Subsystem:
+Application
+
+--------------------------------------------------
+
+Name:
+GAME_MAIN
+
+Observed:
+
+Game main()
+
+Purpose:
+Primary application runtime.
+
+Subsystem:
+Application
+
+--------------------------------------------------
+
+Name:
+CD_INIT
+
+Observed:
+
+CD_init:addr=80016794
+CD_init:addr=80042e70
+CD_init:addr=80070e8c
+
+Purpose:
+Initialize or reinitialize CD subsystem.
+
+Subsystem:
+CD-ROM
+
+Observed Effects:
+- Disc access enabled
+- Data loading available
+
+--------------------------------------------------
+
+Name:
+RESET_GRAPH
+
+Observed:
+
+ResetGraph:jtb=800419a0,env=800419e8
+
+ResetGraph:jtb=8006f28c,env=8006f2d4
+
+Purpose:
+Reset graphics subsystem state.
+
+Subsystem:
+GPU
+
+Observed Effects:
+- Graphics environment reset
+- GPU command activity follows
+
+--------------------------------------------------
+
+Name:
+MEMORY_INFO
+
+Observed:
+
+MemorySys::Info()
+
+Purpose:
+Display memory layout information.
+
+Subsystem:
+Memory
+
+Observed Information:
+- RAM size
+- Kernel allocation
+- Stack allocation
+- Code allocation
+- Data allocation
+- Heap allocation
+
+--------------------------------------------------
+
+Name:
+HEAP_REPORT
+
+Observed:
+
+HEAP used: 884552
+free: 864672
+
+Purpose:
+Report heap usage statistics.
+
+Subsystem:
+Memory
+
+--------------------------------------------------
+
+Name:
+DUMP_HEAP
+
+Observed:
+
+DumpHeap: 844K
+
+Purpose:
+Display heap information.
+
+Subsystem:
+Memory
+
+==================================================
+UNCLASSIFIED EVENTS
+==================================================
+
+Name:
+BIOS_TRACE1
+
+Observed Values:
+
+0x00
+0x01
+0x02
+0x03
+0x04
+0x05
+0x06
+0x07
+0x08
+0x09
+0x0e
+0x0f
+
+Purpose:
+Unknown
+
+Notes:
+Appears throughout startup sequence.
+
+--------------------------------------------------
+
+Name:
+UNKNOWN_GPU_DATA
+
+Observed Values:
+
+0007924c
+000419a0
+0006f28c
+
+Purpose:
+Unknown
+
+Subsystem:
+GPU
+
+--------------------------------------------------
+
+Name:
+PAD_COMMAND_43
+
+Observed:
+
+Unknown command for pad: 43
+
+Purpose:
+Unknown
+
+Subsystem:
+Input
+
+==================================================
+MEMORY OBSERVATIONS
+==================================================
+
+Observed RAM Size:
+
+2097152 bytes
+
+Example Layout #1:
+
+kernel: 65536
+stack: 16384
+code: 140228
+data: 88899
+heap: 1749232
+
+Example Layout #2:
+
+kernel: 65536
+stack: 16384
+code: 303040
+data: 117095
+heap: 1558224
+
+==================================================
+PCSX-REDUX SESSION LOG
+==================================================
+
+Loading memory card /home/bubbo/.config/pcsx-redux/memcard1.mcd
+Loading memory card /home/bubbo/.config/pcsx-redux/memcard2.mcd
+
+Warning: OpenGL error reporting disabled. See About dialog for more information.
+
+PCSX-Redux booting
+Copyright (C) 2019-2025 PCSX-Redux authors
+
+CPU type: Dynarec (x86-64)
+
+Loaded BIOS: /home/bubbo/Downloads/SCPH-5501.BIN
+Known BIOS detected: SCPH-7003 (US) (8d8cb7e4)
+
+BIOS Trace1: 0x0f
+BIOS Trace1: 0x0e
+BIOS Trace1: 0x01
+BIOS Trace1: 0x02
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x01
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+BIOS Trace1: 0x02
+BIOS Trace1: 0x05
+
+PS-X Realtime Kernel Ver.2.5
+
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc.
+
+BIOS Trace1: 0x06
+
+KERNEL SETUP!
+
+Configuration : EvCB 0x10    TCB 0x04
+
+BIOS Trace1: 0x07
+
+System ROM Version 3.0 11/18/96 A
+
+Copyright 1993-1996 (C) Sony Computer Entertainment Inc.
+
+ResetCallback: _96_remove ..
+
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+Got an unknown GPU data word: 0007924c (cmdType: 0, command: 0)
+
+BIOS Trace1: 0x00
+BIOS Trace1: 0x01
+
+System Controller ROM Version 98/06/10 c3
+
+BIOS Trace1: 0x02
+
+PS-X Control PAD Driver Ver 3.0
+
+==================================================
+DISC LOAD
+==================================================
+
+Loaded CD Image:
+/home/bubbo/Downloads/Vib-Ribbon/Vib-Ribbon (Europe) (En,Fr,De,Es,It).cue[+cue].
+
+Track 01 (DATA) - Start 00:02:00, Length 01:28:67
+Track 02 (CDDA) - Start 01:42:00, Length 02:48:05
+Track 03 (CDDA) - Start 04:21:00, Length 02:33:47
+Track 04 (CDDA) - Start 06:55:00, Length 02:32:31
+Track 05 (CDDA) - Start 09:27:00, Length 02:34:57
+Track 06 (CDDA) - Start 12:02:00, Length 02:46:27
+Track 07 (CDDA) - Start 14:49:00, Length 02:33:05
+Track 08 (CDDA) - Start 17:22:00, Length 03:03:52
+
+CD-ROM Label:
+CD-ROM ID: SCES02873
+CD-ROM EXE Name: SCES_028.73;1
+
+==================================================
+BOOTSTRAP
+==================================================
+
+BIOS Trace1: 0x08
+
+BOOTSTRAP LOADER Type C Ver 2.1   03-JUL-1994
+
+Copyright 1993,1994 (C) Sony Computer Entertainment Inc.
+
+BIOS Trace1: 0x09
+
+setup file    : cdrom:SYSTEM.CNF;1
+
+TCB      00000004
+EVENT    00000010
+STACK    801ffff0
+
+BOOT = cdrom:\SCES_028.73;1
+
+argument =
+
+KERNEL SETUP!
+
+Configuration : EvCB 0x10    TCB 0x04
+
+boot file     : cdrom:\SCES_028.73;1
+
+EXEC:PC0(80011f2c)  T_ADDR(80010000)  T_SIZE(00006800)
+
+boot address  : 80011f2c 801ffff0
+
+Execute !
+
+S_ADDR(801ffff0)  S_SIZE()
+
+==================================================
+APPLICATION
+==================================================
+
+Loader main()
+
+CD_init:addr=80016794
+
+Title main()
+
+MemorySys::Info()
+
+ramsize: 2097152
+
+----------------
+kernel:   65536
+stack:    16384
+code:    140228
+data:     88899
+heap:   1749232
+
+ResetGraph:jtb=800419a0,env=800419e8
+
+Got an unknown GPU data word: 000419a0 (cmdType: 0, command: 0)
+
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+
+CD_init:addr=80042e70
+
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+
+HEAP used: 884552, free: 864672
+
+DumpHeap: 844K
+
+==================================================
+GAME
+==================================================
+
+Packet report: max 12512 of 24576
+
+CD_init:addr=80016794
+
+Game main()
+
+MemorySys::Info()
+
+ramsize: 2097152
+
+----------------
+kernel:   65536
+stack:    16384
+code:    303040
+data:    117095
+heap:   1558224
+
+ResetGraph:jtb=8006f28c,env=8006f2d4
+
+Got an unknown GPU data word: 0006f28c (cmdType: 0, command: 0)
+
+CD_init:addr=80070e8c
+
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+Unknown command for pad: 43
+
+==================================================
+TERMINATION
+==================================================
+
+Assertion failed:
+file "C:/psj/dev/locale/game/FbStream.cpp"
+line 121
+
+BIOS Trace1: 0x03
+BIOS Trace1: 0x04
+BIOS Trace1: 0x05
+BIOS Trace1: 0x06
+
+Unknown command for pad: 43
+
+==================================================
+END OF REPORT #0001
+==================================================
